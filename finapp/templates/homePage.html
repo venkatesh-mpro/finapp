@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .tile {
+            width: 150px;
+            height: 150px;
+            background-color: #00a6ff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tile:hover {
+            background-color: #45a049;
+        }
+        .tile h3 {
+            margin: 0;
+            font-size: 18px;
+            color: white;
+
+        }
+    </style>
+</head>
+    <body>
+        <div class="container">
+            <div class="tile">
+                <a href="/home/summary/">
+                    <h3>Summary</h3>
+                </a>
+            </div>
+            <div class="tile">
+                <a href="/home/customers/">
+                    <h3>Customer Details</h3>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

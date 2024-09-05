@@ -23,9 +23,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6vd3w^2s4pmjjvid-u%-1b*__jhkh626h&@llqfjmd&uz^=aok'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+APPEND_SLASH = True
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'codeserver-venkateshmv2.mitsogo.dev',
+    '192.168.18.72'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://codeserver-venkateshmv2.mitsogo.dev:442',
+]
+
 
 
 # Application definition
