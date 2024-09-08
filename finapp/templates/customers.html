@@ -50,23 +50,25 @@
     <table>
         <thead>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>S.No</th>
+                <th>Name</th>
                 <th>Phone Number</th>
                 <th>Address</th>
                 <th>Loan Amount</th>
                 <th>Date Of Join</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
             {% for customer in customers %}
                 <tr>
-                    <td>{{ customer.first_name }}</td>
-                    <td>{{ customer.last_name }}</td>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.name }}</td>
                     <td>{{ customer.phone_number }}</td>
                     <td>{{ customer.address }}</td>
                     <td>{{ customer.loan_amount }}</td>
                     <td>{{ customer.join_date }}</td>
+                    <td class="update-button" onclick="updateRecord({{ customer.id }})">^</td>
                 </tr>
             {% empty %}
                 <tr>
@@ -75,8 +77,13 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="button-container" style="text-align: right;">
-        <button onclick="window.location.href='../add_customer/'">Add New Customer</button>
+    <script>
+        function updateRecord(cust_id) {
+            window.location.href = '/home/customer/?id=' + cust_id;
+        }
+        </script>
+    <div class="button-container" style="text-align: center;">
+        <button onclick="window.location.href='/home/add_customer/'">Add New Customer</button>
     </div>
 </div>
 

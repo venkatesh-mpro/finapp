@@ -59,11 +59,8 @@
     <h2>Customer Details Form</h2>
     <form id="customerForm" action="submit/" method="POST" onsubmit="event.preventDefault(); showModal();">
         {% csrf_token %}
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
-
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
         <label for="phoneNumber">Phone Number:</label>
         <input type="tel" id="phoneNumber" name="phoneNumber" required>
@@ -100,14 +97,13 @@
 
 <script>
     function showModal() {
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
+        const name = document.getElementById('name').value;
         const phoneNumber = document.getElementById('phoneNumber').value;
         const address = document.getElementById('address').value;
         const loanAmount = document.getElementById('loanAmount').value;
 
         document.getElementById('modalDetails').innerText = 
-            `Name: ${firstName} ${lastName}\nPhone: ${phoneNumber}\nAddress: ${address}\nLoan Amount: ${loanAmount}`;
+            `Name: ${name}\nPhone: ${phoneNumber}\nAddress: ${address}\nLoan Amount: ${loanAmount}`;
         
         var modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
         modal.show();
