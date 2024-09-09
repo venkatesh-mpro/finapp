@@ -41,6 +41,19 @@
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+        .button-container button {
+            background-color: rgb(0, 183, 255);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-container button:hover {
+            background-color: rgb(0, 136, 255);
+        }
     </style>
 </head>
 <body>
@@ -84,6 +97,9 @@
         </script>
     <div class="button-container" style="text-align: center;">
         <button onclick="window.location.href='/home/add_customer/'">Add New Customer</button>
+    </div>
+    <div class="button-container" style="text-align: center; margin-top: 10px;">
+        <button onclick="window.location.href='/home'">Home</button>
     </div>
 </div>
 

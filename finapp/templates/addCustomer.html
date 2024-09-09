@@ -40,7 +40,7 @@
             box-sizing: border-box;
         }
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: rgb(0, 183, 255);
             color: white;
             padding: 10px 15px;
             border: none;
@@ -49,7 +49,20 @@
             font-size: 16px;
         }
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: rgb(0, 136, 255);
+        }
+        .button-container button {
+            background-color: rgb(0, 183, 255);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-container button:hover {
+            background-color: rgb(0, 136, 255);
         }
     </style>
 </head>
@@ -71,7 +84,10 @@
         <label for="loanAmount">Total Loan Amount:</label>
         <input type="text" id="loanAmount" name="loanAmount" required>
 
-        <input type="submit" value="Submit">
+        <center><input type="submit" value="Submit"></center>
+        <div class="button-container" style="text-align: center; margin-top: 10px;">
+            <button onclick="window.location.href='/home/customers/'">Cancel</button>
+        </div>
     </form>
 </div>
 

@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Customer
 from .forms import LoanHistoryForm
 from datetime import datetime, timedelta
+from django.db import IntegrityError
 
 
 def add_customer(request):
@@ -27,7 +28,12 @@ def save_customer(request):
             paid_amount=paid_amount,
             join_date=join_date,
         )
-        customer.save()
+        try:
+            customer.save()
+        except IntegrityError:
+            return HttpResponse('<h1 style="text-align: center;">The phone number is not unique.</h1>', status=400)
+        except Exception as e:
+            print(str(e))
 
         return HttpResponse(
             """<h1 style="text-align: center;">Customer details submitted!</h1>
